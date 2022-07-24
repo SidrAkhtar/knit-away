@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+
+<h2>Add a New Pattern</h2>
+  <form action="/patterns" method="POST">
+    <label>Pattern Name:
+      <input type="text" name="name">
+    </label><br>
+    <label>Supplies:
+      <input type="text" name="supplies">
+    </label><br>
+    <label>Details:
+      <input type="text" name="details">
+    </label><br>
+    <label>Difficulty Level:
+     <select name="difficulty">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+   </label><br>
+   <label>Instructions:
+     <input type="text" name="instructions">
+   </label><br>
+   <input type="submit" value="Add Pattern">
+ </form>
+
+<%- include('../partials/footer') %>

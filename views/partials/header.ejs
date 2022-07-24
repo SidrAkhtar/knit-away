@@ -5,13 +5,30 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel='stylesheet' href='/stylesheets/style.css' />
-   <title>Document</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima:wght@500&display=swap" rel="stylesheet">
+   <title><%= title %></title>
 </head>
+
 <body>
-   <nav>
-      <a href="/">HOME</a>
-      <a href="/">PATTERNS</a>
-      <a href="/">YARNS</a>
-      <a href="/">PROJECTS</a>
-      <a href="/">ADD PROJECT</a>
-   </nav>
+  <nav>
+    <!-- <img src="/images/camera.svg"> -->
+    <a href="/" <%- title === 'HOME' ? 'class="active"' : '' %>>HOME</a>
+    <!-- <a href="/">HOME</a> -->
+    <a href="/">PATTERNS</a>
+    <a href="/">YARNS</a>
+    <a href="/">PROJECTS</a>
+    <!-- <a href="/patterns/new">Add Pattern</a> -->
+    <!-- <a href="/">ADD PROJECT</a> -->
+    <% if (user) { %>
+      <a href="/patterns/new"	<%- title === 'Add Pattern' ? 'class="active"' : '' %>>
+        ADD PATTERN</a>
+      <a href="/logout">LOG OUT</a>
+    <% } else { %>
+      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <% } %>
+  </nav>
+
+   <main>
+     

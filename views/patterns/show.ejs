@@ -1,0 +1,25 @@
+<table>
+   <thead>
+     <tr>
+       <th>User</th>
+       <th>Date</th>
+       <th>Comment</th>
+     </tr>
+   </thead>
+   <tbody>
+       <tr>
+         <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %> referrerpolicy="no-referrer" ><%= c.userName %></td>
+         <td><%= c.createdAt.toLocaleDateString() %></td>
+         <td><%= c.content %></td>
+       </tr>
+     <% }); %>
+   </tbody>
+ </table>
+ 
+
+
+ <!-- <% if ( user?._id.equals(r.user) ) { %> -->
+   <!-- <form action="/patterns" method="POST"> -->
+     <!-- <button type="submit">X</button> -->
+   <!-- </form> -->
+ <!-- <% } %> -->

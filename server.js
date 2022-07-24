@@ -3,15 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var passport = require('passport');
 const methodOverride = require('method-override');
 
 // Load the secrets in the .env module
 require('dotenv').config();
 // Connect to our database (This line of code must be AFTER the above - .env)
 require('./config/database');
+// Configure passport
+require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var patternsRouter = require('./routes/patterns');
 
 var app = express();
 
@@ -26,8 +30,22 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/patterns', patternsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
