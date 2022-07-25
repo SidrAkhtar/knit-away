@@ -1,25 +1,18 @@
-<table>
-   <thead>
-     <tr>
-       <th>User</th>
-       <th>Date</th>
-       <th>Comment</th>
-     </tr>
-   </thead>
-   <tbody>
-       <tr>
-         <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %> referrerpolicy="no-referrer" ><%= c.userName %></td>
-         <td><%= c.createdAt.toLocaleDateString() %></td>
-         <td><%= c.content %></td>
-       </tr>
-     <% }); %>
-   </tbody>
- </table>
- 
+<%- include('../partials/header') %>
 
 
- <!-- <% if ( user?._id.equals(r.user) ) { %> -->
-   <!-- <form action="/patterns" method="POST"> -->
-     <!-- <button type="submit">X</button> -->
-   <!-- </form> -->
- <!-- <% } %> -->
+<section id="show-new-pattern">
+  <div>Pattern Name: </div>
+  <div><%= pattern.name %></div>
+  <div>Material: </div>
+  <div><%= pattern.materials %></div>
+  <div>Details: </div>
+  <div><%= pattern.details %></div>
+  <div>Difficulty Level: </div>
+  <div><%= pattern.difficulty %></div>
+  <div>Instructions: </div>
+  <div><%= pattern.instructions %></div>
+</section>
+
+
+ <%- include('../partials/footer') %>

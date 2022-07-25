@@ -71,3 +71,9 @@ nav > a.active {
   color: white;
   cursor: default;
 }
+
+#show-new-pattern {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}

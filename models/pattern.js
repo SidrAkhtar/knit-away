@@ -15,7 +15,7 @@ const Schema = mongoose.Schema;
 
 const patternSchema = new Schema({
   name: String,
-  supplies: [String],
+  materials: [String],
   details: String,
   difficulty: {
     type: Number,
