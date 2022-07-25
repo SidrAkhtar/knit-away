@@ -28,11 +28,11 @@ h2 {
   font-size: 50px;
 }
 
-#patterns-images {
-  display: flex;
+#show-all-patterns {
+  display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
-  text-align: center;
+
 }
 
 .login {

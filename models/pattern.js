@@ -14,15 +14,31 @@ const Schema = mongoose.Schema;
 
 
 const patternSchema = new Schema({
-  name: String,
-  materials: [String],
-  details: String,
+  name: {
+    type: String,
+  },
+  materials: {
+    type: [String],
+  },
+  details: {
+    type: String,
+  },
+  imgUrl: {
+    type: String,
+  },
   difficulty: {
     type: Number,
     enum: ['1', '2', '3', '4', '5']
   },
-  instructions: String,
-})
+  instructions: {
+    type: String,
+  },
+  user: {type: Schema.Types.ObjectId, ref: 'User'},
+  userName: String,
+  userAvatar: String,
+},
+ {timestamps: true}
+);
 
 
 // Compile the schema into a model and export it

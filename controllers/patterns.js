@@ -13,10 +13,12 @@ function newPattern(req, res) {
 }
 
 function create(req, res) {
-   const pattern = new Pattern(req.body)
-   pattern.save(function(err) {
-      if (err) return res.redirect('./patterns/new');
-      res.redirect(`/patterns/${pattern._id}` );
+   req.body.user  = req.user._id;
+   req.body.userName = req.user.name;
+   req.body.userAvatar = req.user.avatar;
+   Pattern.create(req.body, function(err) {
+      if (err) return res.redirect('/patterns/new');
+      res.redirect("/patterns");
    });
 }
 

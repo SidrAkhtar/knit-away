@@ -1,7 +1,8 @@
 <%- include('../partials/header') %>
 
-
+<h2>New Pattern</h2>
 <section id="show-new-pattern">
+  <img src="<%= pattern.imgUrl %>" alt="<%= pattern.name %>" height="250" width="250">
   <div>Pattern Name: </div>
   <div><%= pattern.name %></div>
   <div>Material: </div>
@@ -13,6 +14,7 @@
   <div>Instructions: </div>
   <div><%= pattern.instructions %></div>
 </section>
+
 
 
  <%- include('../partials/footer') %>
