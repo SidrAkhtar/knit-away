@@ -4,7 +4,8 @@ module.exports = {
    new: newPattern,
    create,
    index,
-   show
+   show,
+   myPatterns
 };
 
 function newPattern(req, res) {
@@ -33,3 +34,9 @@ function show(req, res) {
       res.render('patterns/show', { title: 'Pattern Detail', pattern })
    })
 }
+
+function myPatterns(req, res) {
+   Pattern.find({"req.body.user": req.user._id}, function(err, patterns) {
+      res.render('patterns/myPatterns', { title: 'My Patterns', patterns });
+   });
+ }

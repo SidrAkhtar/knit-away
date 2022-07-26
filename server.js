@@ -16,7 +16,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var patternsRouter = require('./routes/patterns');
-var mypatternsRouter = require('./routes/mypatterns');
+var commentsRouter = require('./routes/comments');
 
 var app = express();
 
@@ -40,20 +40,24 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Custom middleware to add the logged in user
+// to the locals object so that we can access
+// user within EVERY template we render without
+// having to pass user: req.user from the controller
 app.use(function (req, res, next) {
   res.locals.user = req.user;
   next();
 });
 
+// Middleware to protect routes
+const isLoggedIn = require('./config/auth');
+
 app.use('/', indexRouter);
 app.use('/patterns', patternsRouter);
-app.use('/mypatterns', mypatternsRouter);
-
 // The starts with path for a related-resource,
 // comments, varies, thus we cannot specify
 // a starts with path
-// app.use('/', isLoggedIn, commentsRouter);
-// app.use('/', isLoggedIn, performersRouter);
+app.use('/',isLoggedIn, commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

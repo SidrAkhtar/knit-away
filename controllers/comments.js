@@ -1,19 +1,37 @@
-const Pattern = require('../models/movie');
+const Pattern = require('../models/pattern');
+
+module.exports = {
+  create,
+  delete: deleteComment
+}
 
 function create(req, res) {
    // Find the pattern to embed the comment within
    Pattern.findById(req.params.id, function(err, pattern) {
- 
-     // Add the user-centric info to req.body (the new review)
+     // Add the user-centric info to req.body (the new comment)
      req.body.user = req.user._id;
      req.body.userName = req.user.name;
      req.body.userAvatar = req.user.avatar;
  
-     // Push the subdoc for the review
-     pattern.reviews.push(req.body);
+     // Push the subdoc for the comment
+     pattern.comments.push(req.body);
      // Always save the top-level document (not subdocs)
      pattern.save(function(err) {
        res.redirect(`/patterns/${pattern._id}`);
      });
    });
  }
+
+ async function deleteComment(req, res, next) {
+  try {
+    const pattern = await Pattern.findOne({'comments._id': req.param.id, 'comments.user': req.user._id});
+    if (!pattern) throw new Error("YOU CAN'T DO THAT!!");
+    // Remove the using the remove method on Mongoose arrays
+    pattern.comments.remove(req.params.id);
+    await pattern.save();
+    res.redirect(`/patterns/${pattern._id}`);
+  } catch (err) {
+    return next(err);
+    }
+  }
+ 

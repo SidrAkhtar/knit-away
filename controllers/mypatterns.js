@@ -1,11 +1,11 @@
-const Pattern = require('../models/pattern');
+// const Pattern = require('../models/pattern');
 
-module.exports = {
-   index
-}
+// module.exports = {
+//    index
+// }
 
-function index(req, res) {
-   Pattern.find({}, function(err, patterns) {
-      res.render('mypatterns/index', { title: 'My Patterns', patterns });
-   });
- }
+// function index(req, res) {
+//    Pattern.find({}, function(err, patterns) {
+//       res.render('mypatterns/index', { title: 'My Patterns', patterns });
+//    });
+//  }
