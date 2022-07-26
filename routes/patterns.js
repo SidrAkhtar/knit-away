@@ -9,6 +9,7 @@ router.get('/', patternsCtrl.index);
 router.get('/new', patternsCtrl.new);
 router.get('/:id', patternsCtrl.show)
 router.get('/patterns/:id', patternsCtrl.show)
+router.get('/mypatterns', patternsCtrl.show)
 // POST /patterns (create functionality)
 router.post('/', isLoggedIn, patternsCtrl.create)
 

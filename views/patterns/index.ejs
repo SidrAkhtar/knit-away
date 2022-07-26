@@ -1,38 +1,13 @@
 <%- include('../partials/header') %>
 
-
-<!-- <div id="show-each-pattern">
-   <p><a href="Scarf">
-      <img src="https://i.imgur.com/ToNNEzp.png" alt="Scarf" width="250" height="250">
-   </a>Scarf</p>
-   <p><a href="Hat">
-      <img src="https://i.imgur.com/ToNNEzp.png" alt="Hat" width="250" height="250">
-   </a>Hat</p>
-   <p><a href="Sweater">
-      <img src="https://i.imgur.com/ToNNEzp.png" alt="Sweater" width="250" height="250">
-   </a>Sweater</p>
-   <p><a href="Headband">
-      <img src="https://i.imgur.com/ToNNEzp.png" alt="Headband" width="250" height="250">
-   </a>Headband</p>
-</div> -->
-
-
-<!-- <section id="show-all-pattern"> -->
    <h2>ALL PATTERNS</h2>
    <section id="show-all-patterns">
       <div><% patterns.forEach(function(p) { %></div>
-        
-         <div>Pattern Name: </div>
-        <div><a href="/patterns/<%= p._id %>"><%= p.name %></a>
+         <div>
+            <a href="/patterns/<%= p._id %>"><%= p.name %></a>
+            <!-- <img src="/patterns/<%= p._id %>" alt="p.name" width="250" height="250"> -->
+         </a>
          </div>
-        <div>Material: </div>
-        <div><%= p.materials %></div>
-        <div>Details: </div>
-        <div><%= p.details %></div>
-        <div>Difficulty Level: </div>
-        <div><%= p.difficulty %></div>
-        <div>Instructions: </div>
-        <div><%= p.instructions %></div>
       <% }); %>
     </section>
    

@@ -29,10 +29,20 @@ h2 {
 }
 
 #show-all-patterns {
+  font-weight: 50px;
   display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px;
+  justify-content: space-around;
+  grid-gap: 2rem;
+}
 
+#show-new-pattern {
+  font-weight: 50px;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  row-gap: 15px;
 }
 
 .login {
@@ -59,7 +69,7 @@ h2 {
 
 body > nav {
   grid-area: nav;
-  background-color: #BC8F8F;
+  background-color: #824343;
   display: flex;
   justify-content: center;
   align-items: center;

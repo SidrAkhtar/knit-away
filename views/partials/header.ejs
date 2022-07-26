@@ -15,15 +15,15 @@
   <nav>
     <!-- <img src="/images/camera.svg"> -->
     <a href="/" <%- title === 'HOME' ? 'class="active"' : '' %>>HOME</a>
-    <!-- <a href="/">HOME</a> -->
     <a href="/patterns">PATTERNS</a>
     <a href="/yarns">YARNS</a>
-    <a href="/myprojects">MY PROJECTS</a>
-    <!-- <a href="/patterns/new">Add Pattern</a> -->
-    <!-- <a href="/">ADD PROJECT</a> -->
+    <!-- <a href="/mypatterns">MY PATTERNS</a> -->
+
     <% if (user) { %>
       <a href="/patterns/new"	<%- title === 'Add Pattern' ? 'class="active"' : '' %>>
         ADD PATTERN</a>
+      <a href="/mypatterns"	<%- title === 'My Patterns' ? 'class="active"' : '' %>> 
+        MY PATTERNS</a>  
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>

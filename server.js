@@ -47,6 +47,12 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/patterns', patternsRouter);
 
+// The starts with path for a related-resource,
+// comments, varies, thus we cannot specify
+// a starts with path
+// app.use('/', isLoggedIn, commentsRouter);
+// app.use('/', isLoggedIn, performersRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
