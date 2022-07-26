@@ -16,6 +16,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var patternsRouter = require('./routes/patterns');
+var mypatternsRouter = require('./routes/mypatterns');
 
 var app = express();
 
@@ -46,6 +47,7 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/patterns', patternsRouter);
+app.use('/mypatterns', mypatternsRouter);
 
 // The starts with path for a related-resource,
 // comments, varies, thus we cannot specify
