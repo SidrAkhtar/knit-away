@@ -38,11 +38,21 @@ h2 {
 }
 
 #show-new-pattern {
-  font-weight: 50px;
-  display: flex;
-  flex-direction: row;
-  align-content: flex-start;
-  row-gap: 15px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+
+#add-comment-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#add-comment-form input[type="submit"] {
+  width: 10rem;
+  grid-column: 2 / 3;
 }
 
 .login {
@@ -56,13 +66,13 @@ h2 {
   height: 30px;
 }
 
-.review-user {
+.comment-user {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.review-user img {
+.comment-user img {
   border-radius: 50%;
   height: 40px;
 }
@@ -92,10 +102,4 @@ nav > a:hover:not(.active) {
 nav > a.active {
   color: white;
   cursor: default;
-}
-
-#show-new-pattern {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
 }
