@@ -18,32 +18,49 @@
 
 
 <br><br><h2>Comments</h2>
+
+<% if (user) { %>
+  <form id="add-comment-form" method="POST"
+    action="/patterns/<%= pattern._id %>/comments">
+    <label>Comment:</label>
+    <textarea name="content"></textarea>
+    <button type="submit">Post Comment</button>
+  </form>
+
+<% } %>  
+
   <table>
     <thead>
       <tr>
         <th>User</th>
         <th>Date</th>
         <th>Comment</th>
+        <th></th>
       </tr>
     </thead>
+
     <tbody>
-    <% pattern.comments.forEach(function(c) { %>
-      <% if ( user?._id.equals(c.user) ) { %>
-        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-          <button type="submit">X</button>
-        </form>
-        <% } else { %>
-          <h6>No Comments Yet</h6>
-          <% }}) %>
-    </tbody>
-  </table>
-  <% if (user) { %>
-    <form id="add-comment-form" method="POST"
-    action="/patterns/<%= pattern._id %>/comments">
-    <label>Comment:</label>
-    <textarea name="content"></textarea>
-    <input type="submit" value="Add Comment">
-    </form>
-  <% } %>
+      <% pattern.comments.forEach(function(c) { %>
+        <tr>
+          <td class="comment-user"><img src="<%= c.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"><%= c.userName %></td>
+          <td><%= c.createdAt.toLocaleDateString() %></td>
+          <td><%= c.content %></td>
+          <td>
+            <% if ( user?._id.equals(c.user) ) { %>
+              <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            </td>
+          </tr>
+          
+      <% } else { %>
+        <h6>No Comments Yet</h6>
+        <% }}) %>
+      </tbody>
+    </table>
+
+       
+  
+
 
  <%- include('../partials/footer') %>

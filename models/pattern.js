@@ -6,10 +6,10 @@ const commentSchema = new Schema({
   content: {
     type: String, 
     required: true,
-    match: /.{25,}/
+    match: /.{5,}/
   },
   // Add the 3 new properties below
-  user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
+  user: {type: Schema.Types.ObjectId, ref: 'User'},
   userName: String,
   userAvatar: String
 }, {

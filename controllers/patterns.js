@@ -35,8 +35,11 @@ function show(req, res) {
    })
 }
 
+
+
 function myPatterns(req, res) {
-   Pattern.find({"req.body.user": req.user._id}, function(err, patterns) {
+   Pattern.find({user: req.user._id}, function(err, patterns) {
+      // if (pattern.user.id(req.user._id)) return res.redirect('/myPatterns')
       res.render('patterns/myPatterns', { title: 'My Patterns', patterns });
    });
  }

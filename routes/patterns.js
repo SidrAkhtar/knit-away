@@ -6,10 +6,9 @@ const isLoggedIn = require('../config/auth');
 // All routes "start with" /patterns (from server.js)
 router.get('/', patternsCtrl.index);
 // GET /patterns/new
-router.get('/new', patternsCtrl.new);
+router.get('/new', isLoggedIn, patternsCtrl.new);
 router.get('/:id', patternsCtrl.show)
-router.get('/patterns/:id', patternsCtrl.show)
-router.get('/patterns/:id', patternsCtrl.myPatterns)
+// router.get('/:id', isLoggedIn, patternsCtrl.myPatterns)
 // POST /patterns (create functionality)
 router.post('/', isLoggedIn, patternsCtrl.create)
 

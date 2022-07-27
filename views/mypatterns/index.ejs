@@ -4,6 +4,7 @@
    <section id="show-my-patterns">
 
       <div><% patterns.forEach(function(p) { %></div>
+         <!-- <% if ( user?._id.equals(c.user) ) { %> -->
          <% if ( req.user?._id.equals(p.req.user) ) { %>
          <div>
             <a href="/patterns/<%= p._id %>"><%= p.name %></a>
