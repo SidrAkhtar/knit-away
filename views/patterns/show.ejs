@@ -16,6 +16,14 @@
   <div><%= pattern.instructions %></div>
 </section>
 
+<div>
+  <% if (user) { %>
+    <a id="edit-pattern" href="/patterns/<%= pattern._id %>/edit"><button>Edit</button></a>
+    <form id="delete-pattern" action="/patterns/<%= pattern._id %>?_method=DELETE" method="POST"><button type="submit">Delete</button></form>
+<% } %>
+</div>
+
+<a href="/pattern/<%= pattern._id %>">edit</a>
 
 <br><br><h2>Comments</h2>
 
@@ -27,9 +35,6 @@
     <textarea name="content"></textarea>
     <button type="submit">Post Comment</button>
   </form>
-
-
-
 <% } %>  
   <table>
     <thead>
@@ -49,10 +54,6 @@
           <td><%= c.content %></td>
           <td>
             <% if ( user?._id.equals(c.user) ) { %>
-              <form action="/<%= pattern._id %>/comments?_method=PUT" method="POST">
-                <input name="text" value="<%= pattern.comment %>">
-                <button type="submit">Update Comment</button>
-
               <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>

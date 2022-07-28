@@ -5,7 +5,10 @@ module.exports = {
    create,
    index,
    show,
-   myPatterns
+   edit,
+   update,
+   delete: deletePattern,
+   // myPatterns
 };
 
 function newPattern(req, res) {
@@ -35,11 +38,36 @@ function show(req, res) {
    })
 }
 
-
-
-function myPatterns(req, res) {
-   Pattern.find({user: req.user._id}, function(err, pattern) {
-      // if (pattern.user.id(req.user._id)) return res.redirect('/myPatterns')
-      res.render('patterns/myPatterns', { title: 'My Patterns', pattern });
+function edit(req, res) {
+   Pattern.findOne({_id: req.params.id, user: req.user}, function(err, pattern) {
+      // if (err || !pattern) return res.redirect('/patterns');
+      res.render('patterns/edit', { title: 'Edit Pattern', pattern });
    });
- }
+}
+
+function update(req, res) {
+   Pattern.findOneAndUpdate(
+      {_id: req.params.id, user: req.user}, req.body,
+      {new: true},
+      function(err, pattern) {
+         if (err || !pattern) return res.redirect('/patterns');
+         res.redirect(`/patterns/${pattern._id}`)
+      }
+   );
+}
+
+function deletePattern(req, res) {
+   Pattern.findOneAndDelete(
+      {_id: req.params.id, user: req.user}, function(err) {
+         res.redirect('/patterns');
+      }
+   );
+}
+
+
+// function myPatterns(req, res) {
+//    Pattern.find({user: req.user._id}, function(err, pattern) {
+//       // if (pattern.user.id(req.user._id)) return res.redirect('/myPatterns')
+//       res.render('patterns/myPatterns', { title: 'My Patterns', pattern });
+//    });
+//  }

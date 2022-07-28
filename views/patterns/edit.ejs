@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+
+<h2>Edit Pattern</h2>
+  <form class="edit-pattern" action="/patterns/<%= pattern._id %>?_method=PUT" method="POST">
+
+
+    <label>Edit Pattern:
+      <input type="text" name="name" value="<%= pattern.name %>">
+    </label><br>
+    <label>Materials:
+      <input type="text" name="materials" value="<%= pattern.materials %>">
+    </label><br>
+    <label>Details:
+      <input type="text" name="details" value="<%= pattern.details %>">
+    </label><br>
+    <label>Upload Image:
+      <input type="text" name="imgUrl" value="<%= pattern.imgUrl %>">
+    </label>
+    <label>Difficulty Level:
+     <select name="difficulty" value="<%= pattern.difficulty %>">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+   </label><br>
+   <label>Instructions:
+     <input type="text" name="instructions" value="<%= pattern.instructions %>">
+   </label><br>
+   <input type="submit" value="Add Pattern">
+ </form>
+
+
+
+<%- include('../partials/footer') %>
