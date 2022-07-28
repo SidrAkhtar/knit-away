@@ -18,12 +18,10 @@
 
 <div>
   <% if (user) { %>
-    <a id="edit-pattern" href="/patterns/<%= pattern._id %>/edit"><button>Edit</button></a>
-    <form id="delete-pattern" action="/patterns/<%= pattern._id %>?_method=DELETE" method="POST"><button type="submit">Delete</button></form>
+    <a id="edit-pattern" href="/patterns/<%= pattern._id %>/edit"><button>Edit Pattern</button></a>
+    <form id="delete-pattern" action="/patterns/<%= pattern._id %>?_method=DELETE" method="POST"><button type="submit">Delete Pattern</button></form>
 <% } %>
 </div>
-
-<a href="/pattern/<%= pattern._id %>">edit</a>
 
 <br><br><h2>Comments</h2>
 
