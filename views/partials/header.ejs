@@ -16,7 +16,8 @@
     <!-- <img src="/images/camera.svg"> -->
     <a href="/" <%- title === 'HOME' ? 'class="active"' : '' %>>HOME</a>
     <a href="/patterns">PATTERNS</a>
-    <a href="/help">GUIDE</a>
+    <a href="/patterns/guide">GUIDE</a>
+
     <% if (user) { %>
       <a href="/patterns/new"	<%- title === 'Add Pattern' ? 'class="active"' : '' %>>
         ADD PATTERN</a> 

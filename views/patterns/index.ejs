@@ -4,9 +4,7 @@
    <section id="show-all-patterns">
       <div><% patterns.forEach(function(p) { %></div>
          <div>
-            <a href="/patterns/<%= p._id %>"><%= p.name %></a>
-            <!-- <img src="/patterns/<%= p._id %>" alt="p.name" width="250" height="250"> -->
-         </a>
+            <a href="/patterns/<%= p._id %>"><img src="<%= p.imgUrl %>" height="250" width="250"></a>
          </div>
       <% }); %>
     </section>
