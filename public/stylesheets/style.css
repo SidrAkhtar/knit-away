@@ -53,7 +53,7 @@ h2 {
 }
 
 #add-comment-form input[type="submit"] {
-  width: 10rem;
+  width: 5rem;
   grid-column: 2 / 3;
 }
 

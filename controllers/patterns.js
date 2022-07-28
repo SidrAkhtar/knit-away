@@ -14,7 +14,7 @@ function newPattern(req, res) {
 }
 
 function create(req, res) {
-   req.body.user  = req.user._id;
+   req.body.user = req.user._id;
    req.body.userName = req.user.name;
    req.body.userAvatar = req.user.avatar;
    Pattern.create(req.body, function(err) {
@@ -38,8 +38,8 @@ function show(req, res) {
 
 
 function myPatterns(req, res) {
-   Pattern.find({user: req.user._id}, function(err, patterns) {
+   Pattern.find({user: req.user._id}, function(err, pattern) {
       // if (pattern.user.id(req.user._id)) return res.redirect('/myPatterns')
-      res.render('patterns/myPatterns', { title: 'My Patterns', patterns });
+      res.render('patterns/myPatterns', { title: 'My Patterns', pattern });
    });
  }

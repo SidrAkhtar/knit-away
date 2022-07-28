@@ -6,8 +6,8 @@ const commentsCtrl = require('../controllers/comments');
 
 // POST /patterns/:id/comments
 router.post('/patterns/:id/comments', commentsCtrl.create);
-// router.get('/comments/:id/edit', commentsCtrl. edit);
-// router.put('/comments/:id', commentsCtrl. update);
+router.get('/comments/:id/edit', commentsCtrl.edit);
+router.put('/comments/:id', commentsCtrl.update);
 // DELETE /comments/:id
 router.delete('/comments/:id', commentsCtrl.delete);
 

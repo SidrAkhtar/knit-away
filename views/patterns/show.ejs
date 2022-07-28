@@ -23,12 +23,14 @@
   <form id="add-comment-form" method="POST"
     action="/patterns/<%= pattern._id %>/comments">
     <label>Comment:</label>
+    <br>
     <textarea name="content"></textarea>
     <button type="submit">Post Comment</button>
   </form>
 
-<% } %>  
 
+
+<% } %>  
   <table>
     <thead>
       <tr>
@@ -47,12 +49,15 @@
           <td><%= c.content %></td>
           <td>
             <% if ( user?._id.equals(c.user) ) { %>
+              <form action="/<%= pattern._id %>/comments?_method=PUT" method="POST">
+                <input name="text" value="<%= pattern.comment %>">
+                <button type="submit">Update Comment</button>
+
               <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
             </td>
           </tr>
-          
       <% } else { %>
         <h6>No Comments Yet</h6>
         <% }}) %>

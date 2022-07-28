@@ -7,18 +7,6 @@ module.exports = {
   delete: deleteComment
 }
 
-async function deleteComment(req, res, next) {
-  try {
-    const pattern = await Pattern.findOne({'comments._id': req.param.id, 'comments.user': req.user._id});
-    if (!pattern) throw new Error("YOU CAN'T DO THAT!!");
-    // Remove the using the remove method on Mongoose arrays
-    pattern.comments.remove(req.params.id);
-    await pattern.save();
-    res.redirect(`/patterns/${pattern._id}`);
-  } catch (err) {
-    return next(err);
-    }
-  }
 
 function create(req, res) {
    // Find the pattern to embed the comment within
@@ -27,7 +15,6 @@ function create(req, res) {
      req.body.user = req.user._id;
      req.body.userName = req.user.name;
      req.body.userAvatar = req.user.avatar;
-    console.log(req.body)
      // Push the subdoc for the comment
      pattern.comments.push(req.body);
      // Always save the top-level document (not subdocs)
@@ -57,3 +44,16 @@ function edit(req, res) {
     });
   });
  }
+
+ async function deleteComment(req, res, next) {
+  try {
+    const pattern = await Pattern.findOne({'comments._id': req.param.id, 'comments.user': req.user._id});
+    if (!pattern) throw new Error("YOU CAN'T DO THAT!!");
+    // Remove the using the remove method on Mongoose arrays
+    pattern.comments.remove(req.params.id);
+    await pattern.save();
+    res.redirect(`/patterns/${pattern._id}`);
+  } catch (err) {
+    return next(err);
+    }
+  }
