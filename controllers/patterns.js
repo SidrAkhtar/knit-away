@@ -63,11 +63,3 @@ function deletePattern(req, res) {
       }
    );
 }
-
-
-// function myPatterns(req, res) {
-//    Pattern.find({user: req.user._id}, function(err, pattern) {
-//       // if (pattern.user.id(req.user._id)) return res.redirect('/myPatterns')
-//       res.render('patterns/myPatterns', { title: 'My Patterns', pattern });
-//    });
-//  }

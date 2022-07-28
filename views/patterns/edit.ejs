@@ -1,10 +1,7 @@
 <%- include('../partials/header') %>
 
-
 <h2>Edit Pattern</h2>
   <form class="edit-pattern" action="/patterns/<%= pattern._id %>?_method=PUT" method="POST">
-
-
     <label>Edit Pattern:
       <input type="text" name="name" value="<%= pattern.name %>">
     </label><br>
@@ -31,7 +28,5 @@
    </label><br>
    <input type="submit" value="Add Pattern">
  </form>
-
-
-
+ 
 <%- include('../partials/footer') %>
