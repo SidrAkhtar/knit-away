@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel='stylesheet' href='/stylesheets/style.css' />
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arima:wght@500&display=swap" rel="stylesheet">
-   <title><%= title %></title>
+  <title><%= title %></title>
 </head>
 
 <body>
@@ -16,7 +16,6 @@
     <img src="https://i.imgur.com/ToNNEzp.png" height="100" width="100">
     <a href="/" <%- title === 'HOME' ? 'class="active"' : '' %>>HOME</a>
     <a href="/patterns">PATTERNS</a>
-
     <% if (user) { %>
       <a href="/patterns/new"	<%- title === 'Add Pattern' ? 'class="active"' : '' %>>
         ADD PATTERN</a> 
@@ -24,8 +23,6 @@
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>
-
   </nav>
-
-   <main>
+  <main>
      

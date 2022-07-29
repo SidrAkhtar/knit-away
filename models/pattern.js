@@ -16,7 +16,6 @@ const commentSchema = new Schema({
   timestamps: true
 });
 
-
 const patternSchema = new Schema({
   name: {
     type: String,
@@ -44,7 +43,6 @@ const patternSchema = new Schema({
 }, {
   timestamps: true
 });
-
 
 // Compile the schema into a model and export it
 module.exports = mongoose.model('Pattern', patternSchema);

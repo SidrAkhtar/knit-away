@@ -1,14 +1,15 @@
 <%- include('../partials/header') %>
 
-   <h2>ALL PATTERNS</h2>
+<h2>ALL PATTERNS</h2>
    <section id="container">
       <div id="show-all-patterns">
          <% patterns.forEach(function(p) { %>
       </div><br>
-         <div>
-            <a href="/patterns/<%= p._id %>"><img src="<%= p.imgUrl %>" height="250" width="250"><br><%= p.name %></a>
-         </div>
+      <div>
+         <a href="/patterns/<%= p._id %>"><img src="<%= p.imgUrl %>" 
+         height="250" width="250"><br><%= p.name %></a>
+      </div>
       <% }); %>
-    </section>
+   </section>
    
 <%- include('../partials/footer') %>

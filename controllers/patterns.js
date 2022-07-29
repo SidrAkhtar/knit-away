@@ -39,7 +39,6 @@ function show(req, res) {
 
 function edit(req, res) {
    Pattern.findOne({_id: req.params.id, user: req.user}, function(err, pattern) {
-      // if (err || !pattern) return res.redirect('/patterns');
       res.render('patterns/edit', { title: 'Edit Pattern', pattern });
    });
 }

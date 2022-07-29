@@ -1,7 +1,7 @@
 <div align="center">
    <h1>Knit Away...</h1>
    <a href="https://www.linkedin.com/in/sidra-akhtar-sa/" target="_blank">
-   <img src="https://img.shields.io/badge/-@sidraakhtar-blue?style=flat&logo=Linkedin&logoColor=white"/>
+   <img src="https://img.shields.io/badge/-@sidra-akhtar-sa-blue?style=flat&logo=Linkedin&logoColor=white"/>
    </a>
 
    <a href="mailto:sidrakanwal14@gmail.com" target="_blank">
@@ -50,6 +50,7 @@ Tips
 <h2> :atom_symbol: Getting Started </h2>
 
 [Click to open Knit Away...](https://knit-away.herokuapp.com/)
+
 [Click to open Trello Board(used for project planning)](https://trello.com/b/qJb8NIYi/knit-away)
 
 ## :fast_forward: Next Steps   
