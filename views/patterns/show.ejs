@@ -51,7 +51,7 @@
           <td><%= c.createdAt.toLocaleDateString() %></td>
           <td><%= c.content %></td>
           <td>
-            <% if ( user.equals(c.user) ) { %>
+            <% if ( user?._id.equals(c.user) ) { %>
               <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
