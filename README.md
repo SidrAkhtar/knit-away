@@ -1,7 +1,11 @@
 <div align="center">
    <h1>Knit Away...</h1>
    <a href="https://www.linkedin.com/in/sidra-akhtar-sa/" target="_blank">
-   <img src="https://img.shields.io/badge/-@usidraakhtar-blue?style=flat&logo=Linkedin&logoColor=white"/>
+   <img src="https://img.shields.io/badge/-@sidraakhtar-blue?style=flat&logo=Linkedin&logoColor=white"/>
+   </a>
+
+   <a href="mailto:sidrakanwal14@gmail.com" target="_blank">
+      <img src="https://img.shields.io/badge/-Gmail-c14438?style=flat&logo=Gmail&logoColor=white">
    </a>
 </div>
 
@@ -14,22 +18,17 @@
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p>New Game <br> The game starts with a blank board. Click on one of the pointers on the top to start the game. Player can play/pause the music.</p> | <img src="https://i.imgur.com/YLer2ku.png" width="1400"> |
+| <p>Home Page <br>.</p> | <img src="" width="1400"> |
 
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p>Vertical Win <br> This is a vertical win since player has connected 4 circles. "Play Again" button appears once a winner is determined.</p> | <img src="https://i.imgur.com/ipJVpmk.png" width="1400"> |
+| <p>Patterns Page<br>.</p> | <img src="" width="1400"> |
 
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p>Horizontal Win <br> Player connected 4 circles horizontally.</p> | <img src="https://i.imgur.com/zUtzHLG.png" width="1000"> |
-
-| Description | Screenshot |
-|------------ | ------------|
-| <p>Diagonal Win <br> This is a Diagonal win since player mediumpurple connected 4 circles diagonally.</p> | <img src="https://i.imgur.com/A0twskz.png" width="1400"> |
-
+| <p>Add Pattern Page<br>.</p> | <img src="width="1000"> |
 
 
 ## :computer: Technologies Used
@@ -61,4 +60,4 @@ Tips
 - [ ] Track projects
 - [ ] Add shopping cart so a user can purchase a written pattern (digital copy) & to purchase custom made items, such has hat or a scarf
 - [ ] User profile page
-- [ ] Add API - User will be able to watch YouTube videos to learn more about knitting or to watch knitting tutorials
+- [ ] Add API - User will be able to watch YouTube videos to learn more about knitting or to watch knitting tutorials.
