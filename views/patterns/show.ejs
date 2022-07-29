@@ -18,8 +18,12 @@
 
 <div>
   <% if (user) { %>
-    <a id="edit-pattern" href="/patterns/<%= pattern._id %>/edit"><button>Edit Pattern</button></a>
-    <form id="delete-pattern" action="/patterns/<%= pattern._id %>?_method=DELETE" method="POST"><button type="submit">Delete Pattern</button></form>
+    <a id="edit-pattern" href="/patterns/<%= pattern._id %>/edit">
+      <button class="edit-pattern-button">Edit Pattern</button>
+    </a>
+    <form id="delete-pattern" action="/patterns/<%= pattern._id %>?_method=DELETE" method="POST">
+      <button class="delete-pattern-button" type="submit">Delete Pattern</button>
+    </form>
 <% } %>
 </div>
 
@@ -31,7 +35,7 @@
     <label>Comment:</label>
     <br>
     <textarea name="content"></textarea>
-    <button type="submit">Post Comment</button>
+    <button class="post-comment-button" type="submit">Post Comment</button>
   </form>
 <% } %>  
   <table>

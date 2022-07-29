@@ -4,12 +4,11 @@
 }
 
 body {
- /* background-image: url("https://i.imgur.com/i4NRXMz.jpg");
+ background-image: url("https://i.imgur.com/i4NRXMz.jpg");
   background-size:cover;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   width:100%;
   height:100%;
-  /* box-sizing:border-box; */
   background-color: #FA8072;
 }
 
@@ -17,35 +16,6 @@ a {
   color: white;
   font-size: 25px;
 }
-
-/* #home-page {
-  content: "";
-  background: url("https://i.imgur.com/i4NRXMz.jpg");
-  background-size:cover;
-  background-repeat: no-repeat;
-  opacity: 0.4;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1; 
-} */
-
-/* div::after {
-  content: "";
-  background: url("https://i.imgur.com/i4NRXMz.jpg");
-  background-size:cover;
-  background-repeat: no-repeat;
-  opacity: 0.4;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;  
-  background-color: #FA8072; 
-} */
 
 h1 {
   font-size: 160px;
@@ -68,30 +38,8 @@ h4 {
   font-style: oblique;
   text-align: right;
   font-size: 35px;
-  color: #720808;
-  /* text-shadow:4px 4px #510606; */
-  margin-top: -200px;
-  /* padding: 200px; */
-}
-
-#container {
-  /* display: grid; */
-  /* grid-template-columns: auto auto; */
-  /* grid-template-columns: repeat(2 4fr); */
-  /* grid-template-rows: repeat(4 4fr); */
-  max-height: max-content;
-  width: fit-content;
-  /* linear-gradient(105deg, rgba(255,255,255,.2) 39%, rgba(51,56,57,1) 96%) center center / 10000px 10000px no-repeat,
- center no-repeat, 
-  rebeccapurple; */
-  /* background: linear-gradient(105deg, white 39%, rgba(51,56,57,1) 96%) center center / 400px 200px no-repeat,
-  url("https://i.imgur.com/lA2o5Rj.jpg") center no-repeat, rgb(82, 153, 51);
-  /* display: grid; */
-  /* margin: 10px;
-  padding: 10px;
-  opacity: 0.7;
-  height: 100%;
-  width: 100%  */
+  color: #d66a6a;
+  margin-top: -140px;
 }
 
 #show-all-patterns {
@@ -106,35 +54,23 @@ h4 {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: center;
-  /* align-content: center; */
-  color: black;
+  color: blue;
   font-size: 4rem;
   margin: 2rem;
   grid-gap: 0rem;
   column-gap: normal;
-  /* grid-template-columns: repeat(2, minmax(auto, 22rem)); */
-  /* grid-template-columns: 1fr, 1fr;
-  grid-template-rows: repeat(7 1fr);
-  justify-content: center;
-  grid-template-rows: 80px 80px; 
-  margin: 0 auto;
-  width: 50% */
 }
-
 
 #image {
-  /* display: block; */
   margin-left: 180px;
   overflow: hidden;
-  /* margin-right: auto; */
 }
 
-#add-new-pattern ,
+#add-new-pattern,
 #show-new-pattern * {
   font-size: 20px;
   padding: 5px;
   border-radius: 8px;
-
 }
 
 /* >>>>> ADD PATTERN PAGE <<<<< */
@@ -154,7 +90,6 @@ h4 {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  /* display: inline-block; */
   border: 1px solid rgb(85, 10, 10);
   border-radius: 6px;
   border-width: 3px;
@@ -183,11 +118,9 @@ h4 {
   transform: translateY(4px);
 }
 
-
-
 /* >>>>> EDIT PATTERN <<<<< */
 
-#edit-pattern {
+a > #edit-pattern {
   width: 50%;
   background-color: #e89494;
   color: #510606;
@@ -198,11 +131,10 @@ h4 {
   cursor: pointer;
 }
 
-#edit-pattern input[type=text], textarea {
+#edit-pattern input[type=text] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  /* display: inline-block; */
   border: 1px solid rgb(85, 10, 10);
   border-radius: 6px;
   border-width: 3px;
@@ -215,7 +147,6 @@ h4 {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  outline:#e89494;
   color: #fff;
   background-color: #510606;
   border:rgb(201, 75, 125);
@@ -231,7 +162,26 @@ h4 {
   transform: translateY(4px);
 }
 
+.delete-pattern-button:hover, .edit-pattern-button:hover, .post-comment-button {
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #510606;
+  border:rgb(201, 75, 125);
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
 
+.delete-pattern-button:hover, .edit-pattern-button:hover, .post-comment-button {background-color: rgb(201, 75, 125)}
+
+.delete-pattern-button:hover, .edit-pattern-button:hover, .post-comment-button {
+  background-color: #510606;
+  box-shadow: 0 5px rgb(201, 75, 125);
+  transform: translateY(4px);
+}
 
 /* >>>>> ADD COMMENT FORM <<<<< */
 
@@ -270,7 +220,6 @@ h4 {
 }
 
 body > nav {
-  grid-area: nav;
   background-color: #b06363;
   display: flex;
   justify-content: center;
@@ -283,6 +232,10 @@ body > main {
   display: flex;
   flex-direction: column;
   padding: 5px;
+}
+
+div > a {
+  color:rgb(0, 4, 255)
 }
 
 nav > a {
@@ -308,4 +261,19 @@ nav > a.active {
   text-align:left;
   font-size: 20px;
   margin-top: 150px;
+}
+
+table {
+  font-size: 20px;
+  color:rgb(0, 4, 255)
+}
+
+table thead th {
+  padding: 5px;
+  border-bottom: 2px solid #424748;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
 }
