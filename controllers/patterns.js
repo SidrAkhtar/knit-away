@@ -8,7 +8,6 @@ module.exports = {
    edit,
    update,
    delete: deletePattern,
-   // guide
 };
 
 function newPattern(req, res) {
@@ -63,7 +62,3 @@ function deletePattern(req, res) {
       }
    );
 }
-
-// function guide(req, res) {
-//       res.render('patterns/guide', { title: "Beginner's Guide" })
-//    }

@@ -6,10 +6,12 @@
       <input type="text" name="name" value="<%= pattern.name %>">
     </label><br>
     <label>Materials:
-      <textarea name="content" value="<%= pattern.materials %>"></textarea>
+      <input type="text" name="materials" value="<%= pattern.materials %>">
+      <!-- <textarea name="content" value="<%= pattern.materials %>"></textarea> -->
     </label><br>
     <label>Details:
-      <textarea name="content" value="<%= pattern.details %>"></textarea>
+      <input type="text" name="details" value="<%= pattern.details %>">
+      <!-- <textarea name="content" value="<%= pattern.details %>"></textarea> -->
     </label><br>
     <label>Image URL:
       <input type="text" name="imgUrl" value="<%= pattern.imgUrl %>">
@@ -24,7 +26,8 @@
     </select>
    </label><br>
    <label>Instructions:
-    <textarea name="content" value="<%= pattern.instructions %>"></textarea>
+    <input type="text" name="instructions" value="<%= pattern.instructions %>">
+    <!-- <textarea name="content" value="<%= pattern.instructions %>"></textarea> -->
    </label><br>
    <button class="update-pattern-button">Update Pattern</button>
  </form>

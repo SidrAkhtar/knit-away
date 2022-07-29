@@ -31,7 +31,7 @@ const patternSchema = new Schema({
     type: String,
   },
   difficulty: {
-    type: Number,
+    type: String,
     enum: ['1', '2', '3', '4', '5']
   },
   instructions: {

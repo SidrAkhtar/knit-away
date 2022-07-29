@@ -2,9 +2,9 @@ const Pattern = require('../models/pattern');
 
 module.exports = {
   create,
-  edit,
-  update,
-  delete: deleteComment
+  // edit,
+  // update,
+  // delete: deleteComment
 }
 
 
@@ -26,34 +26,34 @@ function create(req, res) {
  }
 
 
-function edit(req, res) {
-  Pattern.findOne({'comments._id': req.params.id}, function(err, pattern) {
-    const comment = pattern.comments.id(req.params.id);
-    res.render('comments/edit', {comment});
-  });
- }
+// function edit(req, res) {
+//   Pattern.findOne({'comments._id': req.params.id}, function(err, pattern) {
+//     const comment = pattern.comments.id(req.params.id);
+//     res.render('comments/edit', {comment});
+//   });
+//  }
 
 
- function update(req, res) {
-  Pattern.findOne({'comments._id': req.params.id}, function(err, pattern) {
-    const commentSubdoc = pattern.comments.id(req.params.id);
-    if (!commentSubdoc.userId.equals(req.user._id)) return res.redirect(`/patterns/${pattern._id}`);
-    commentSubdoc.text = req.body.text;
-    pattern.save(function(err) {
-      res.redirect(`/patterns/${pattern._id}`);
-    });
-  });
- }
+//  function update(req, res) {
+//   Pattern.findOne({'comments._id': req.params.id}, function(err, pattern) {
+//     const commentSubdoc = pattern.comments.id(req.params.id);
+//     if (!commentSubdoc.userId.equals(req.user._id)) return res.redirect(`/patterns/${pattern._id}`);
+//     commentSubdoc.text = req.body.text;
+//     pattern.save(function(err) {
+//       res.redirect(`/patterns/${pattern._id}`);
+//     });
+//   });
+//  }
 
- async function deleteComment(req, res, next) {
-  try {
-    const pattern = await Pattern.findOne({'comments._id': req.param.id, 'comments.user': req.user._id});
-    if (!pattern) throw new Error("YOU CAN'T DO THAT!!");
-    // Remove the using the remove method on Mongoose arrays
-    pattern.comments.remove(req.params.id);
-    await pattern.save();
-    res.redirect(`/patterns/${pattern._id}`);
-  } catch (err) {
-    return next(err);
-    }
-  }
+//  async function deleteComment(req, res, next) {
+//   try {
+//     const pattern = await Pattern.findOne({'comments._id': req.param.id, 'comments.user': req.user._id});
+//     if (!pattern) throw new Error("YOU CAN'T DO THAT!!");
+//     // Remove the using the remove method on Mongoose arrays
+//     pattern.comments.remove(req.params.id);
+//     await pattern.save();
+//     res.redirect(`/patterns/${pattern._id}`);
+//   } catch (err) {
+//     return next(err);
+//     }
+//   }
