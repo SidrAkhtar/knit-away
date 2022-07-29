@@ -1,15 +1,28 @@
-body {
-  padding: 50px;
+* {
+  box-sizing: border-box;
   font-family: 'Arima', cursive;
-  /* grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 10px; */
-  /* background-image: url("https://i.imgur.com/i4NRXMz.jpg");
+}
+
+body {
+  /* padding: 50px; */
+  /* font-family: 'Arima', cursive; */
+  /* grid-template-columns: repeat(4, 1fr); */
+
+ background-image: url("https://i.imgur.com/i4NRXMz.jpg");
   background-size:cover;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat; 
   /* width:100%;
   height:100%; */
   /* box-sizing:border-box; */
   /* background-color: #FA8072; */
+
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
 }
 
 a {
@@ -18,13 +31,20 @@ a {
 }
 
 /* #home-page {
-  width: 200px;
-  height: 200px;
-  display: block;
-  position: relative;
+  content: "";
+  background: url("https://i.imgur.com/i4NRXMz.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
 } */
 
-div::after {
+/* div::after {
   content: "";
   background: url("https://i.imgur.com/i4NRXMz.jpg");
   background-size:cover;
@@ -36,7 +56,7 @@ div::after {
   right: 0;
   position: absolute;
   z-index: -1;   
-}
+} */
 
 h1 {
   font-size: 160px;
@@ -44,13 +64,14 @@ h1 {
   text-align: center;
   text-shadow: 4px 4px #f1a9a9;
   color: #510606;
-  /* padding: 100px; */
   margin: 200px;
 }
 
 h2 {
+  color: #510606;
+  text-shadow: 4px 4px #f1a9a9;
   text-align: center;
-  font-size: 50px;
+  font-size: 70px;
 }
 
 h4 {
@@ -62,28 +83,93 @@ h4 {
   /* padding: 200px; */
 }
 
-h5 {
+/* h5 {
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 10px;
-}
+} */
 
-div > #show-all-patterns {
-  font-weight: 50px;
+.show-all-patterns {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: auto auto;
+  grid-template-rows: 20px 20px 20px 20px; 
   grid-column-gap: 10px;
-  background-color: white;
-  /* grid-template-columns: 0fr 4fr; */
-  /* grid-template-rows: 75px 1fr 30px; */
-  /* justify-content: space-around; */
-  /* grid-gap: 2rem; */
+  grid-gap: 2rem;
 }
 
-#show-new-pattern {
+/* #show-new-pattern {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
+} */
+
+/* #add-new-pattern {
+  display: grid;
+  grid-gap: 1px;
+  /* grid-template-columns: repeat(2, minmax(auto, 22rem)); */
+  /* grid-template-columns: 1fr, 1fr;
+  grid-template-rows: repeat(7 1fr);
+  justify-content: center; */
+  /* grid-template-rows: 80px 80px;  */
+  /* margin: 0 auto;
+  width: 50% */
+/* }  */
+
+#add-new-pattern ,
+#show-new-pattern * {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 8px;
+
 }
+
+/* >>>>> ADD PATTERN PAGE <<<<< */
+
+#add-new-pattern {
+  width: 50%;
+  background-color: #e89494;
+  color: #510606;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border:#510606;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#add-new-pattern input[type=text], textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(85, 10, 10);
+  border-radius: 6px;
+  border-width: 3px;
+  box-sizing: border-box;
+}
+
+.add-pattern-button {
+  display: inline;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline:#e89494;
+  color: #fff;
+  background-color: #510606;
+  border:rgb(201, 75, 125);
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.add-pattern-button:hover {background-color: rgb(201, 75, 125)}
+
+.add-pattern-button:active {
+  background-color: #510606;
+  box-shadow: 0 5px rgb(201, 75, 125);
+  transform: translateY(4px);
+}
+
+/* >>>>> ADD COMMENT FORM <<<<< */
 
 #add-comment-form {
   display: grid;
@@ -128,6 +214,15 @@ body > nav {
   padding: 0 20px 0 30px;
 }
 
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #E8ECEB; */
+  padding: 20px;
+  /* overflow-y: scroll; */
+}
 
 nav > a {
   margin: 20px;

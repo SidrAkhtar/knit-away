@@ -1,20 +1,21 @@
 <%- include('../partials/header') %>
 
-
 <h2>Add a New Pattern</h2>
-  <form action="/patterns" method="POST">
+  <form id="add-new-pattern" action="/patterns" method="POST">
     <label>Pattern Name:
       <input type="text" name="name">
     </label><br>
     <label>Materials:
-      <input type="text" name="materials">
+      <!-- <input type="text" name="materials"> -->
+      <textarea name="content"></textarea>
     </label><br>
     <label>Details:
-      <input type="text" name="details">
+      <!-- <input type="text" name="details"> -->
+      <textarea name="content"></textarea>
     </label><br>
-    <label>Upload Image:
+    <label>Image URL:
       <input type="text" name="imgUrl">
-    </label>
+    </label><br>
     <label>Difficulty Level:
      <select name="difficulty">
       <option value="1">1</option>
@@ -25,9 +26,11 @@
     </select>
    </label><br>
    <label>Instructions:
-     <input type="text" name="instructions">
+     <!-- <input type="text" name="instructions"> -->
+     <textarea name="content"></textarea>
    </label><br>
-   <input type="submit" value="Add Pattern">
- </form>
+   <button class="add-pattern-button">Add Pattern</button>
+  </form>
+</section>
 
 <%- include('../partials/footer') %>
