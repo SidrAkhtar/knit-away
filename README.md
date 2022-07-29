@@ -18,17 +18,17 @@
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p>Home Page <br>.</p> | <img src="" width="1400"> |
+| <p>Home Page <br> Landing page allows user to go to Patterns Page or Log In.</p> | <img src="https://i.imgur.com/zaMi59R.jpg" width="1400"> |
 
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p>Patterns Page<br>.</p> | <img src="" width="1400"> |
+| <p>Patterns Page<br> A visitor can view each pattern without having to login.</p> | <img src="https://i.imgur.com/0uWzJMe.jpg" width="1400"> |
 
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p>Add Pattern Page<br>.</p> | <img src="width="1000"> |
+| <p>Add Pattern Page<br> A user must log in to Add a Pattern.</p> | <img src="https://i.imgur.com/P4GBUWH.png" width="1400"> |
 
 
 ## :computer: Technologies Used
