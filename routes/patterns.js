@@ -11,7 +11,7 @@ router.get('/', patternsCtrl.index);
 router.get('/new', isLoggedIn, patternsCtrl.new);
 router.get('/:id', patternsCtrl.show);
 router.get('/:id/edit', patternsCtrl.edit)
-router.get('/guide', patternsCtrl.guide)
+// router.get('/guide', patternsCtrl.guide)
 router.put('/:id', patternsCtrl.update)
 router.delete('/:id', patternsCtrl.delete)
 
