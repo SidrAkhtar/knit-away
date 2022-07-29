@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
 
    <h2>ALL PATTERNS</h2>
-   <section id="show-all-patterns">
-      <div>
+   <section id="container">
+      <div id="show-all-patterns">
          <% patterns.forEach(function(p) { %>
-      </div>
+      </div><br>
          <div>
             <a href="/patterns/<%= p._id %>"><img src="<%= p.imgUrl %>" height="250" width="250"><%= p.name %></a>
          </div>
