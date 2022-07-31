@@ -54,7 +54,7 @@ h4 {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: center;
-  color: blue;
+  color: darkblue;
   font-size: 4rem;
   margin: 2rem;
   grid-gap: 0rem;
@@ -235,7 +235,7 @@ body > main {
 }
 
 div > a {
-  color:rgb(0, 4, 255)
+  color:darkblue;
 }
 
 nav > a {
@@ -265,12 +265,12 @@ nav > a.active {
 
 table {
   font-size: 20px;
-  color:rgb(0, 4, 255)
+  color:darkblue;
 }
 
 table thead th {
   padding: 5px;
-  border-bottom: 2px solid #424748;
+  border-bottom: 2px solid #d26058;
 }
 
 table td {
